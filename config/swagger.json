@@ -1,0 +1,106 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "APIs Rest de Integração Entirex",
+    "version": "1.0.0",
+    "title": "Portal API ENTIREX",
+    "contact": {
+      "email": "dartanh@embratel.com.br"
+    },
+    "license": {
+      "name": "Embratel",
+      "url": "http://www.embratel.com.br"
+    }
+  },
+  "host": "10.10.89.174:8080",
+  "basePath": "/SNRSPSP6/rest",
+  "tags": [
+    {
+      "name": "SNR",
+      "description": "Acessar biblioteca SNR"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/snrspsp6": {
+      "post": {
+        "tags": [
+          "SNR"
+        ],
+        "summary": "JSON de request",
+        "description": "",
+        "operationId": "callSnrspsp6",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Chamar Stub snrspsp6 no SNR",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Snrspsp6"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso",
+            "schema": {
+              "$ref": "#/definitions/Snrspsp6"
+            }
+          },
+          "400": {
+            "description": "Dados inválidos"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Snrspsp6": {
+      "type": "object",
+      "properties": {
+        "in_conta_corrente": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "in_pabx": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "in_array_status_ramais": {
+          "type": "array"
+        },
+        "in_array_ramais": {
+          "type": "array"
+        },
+        "in_status": {
+          "type": "string",
+          "description": "Status"
+        },
+        "in_data_tec": {
+          "type": "string"
+        },
+        "in_tp_movto": {
+          "type": "string"
+        },
+        "in_pabx_novo": {
+          "type": "integer"
+        },
+        "in_conta_nova": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "Snrspsp6"
+      }
+    }
+  }
+}
